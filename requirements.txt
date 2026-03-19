@@ -1,0 +1,23 @@
+# Core ML
+torch>=2.1.0
+torchvision>=0.16.0
+
+# Stable Diffusion inpainting
+diffusers>=0.27.0
+transformers>=4.38.0
+accelerate>=0.27.0
+safetensors>=0.4.2
+
+# Segment Anything Model
+segment-anything @ git+https://github.com/facebookresearch/segment-anything.git
+
+# Image processing
+Pillow>=10.0.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+
+# Web UI
+gradio>=4.20.0
+
+# Utilities
+huggingface-hub>=0.21.0
