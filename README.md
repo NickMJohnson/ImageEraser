@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ```bash
 mkdir -p checkpoints
-wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O checkpoints/sam_vit_h.pth
+curl -L -o checkpoints/sam_vit_h.pth https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
 ```
 
 ### 3. Run
