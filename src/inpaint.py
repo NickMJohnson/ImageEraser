@@ -3,7 +3,7 @@ from PIL import Image
 from diffusers import StableDiffusionInpaintPipeline
 
 
-MODEL_ID = "stabilityai/stable-diffusion-2-inpainting"
+MODEL_ID = "runwayml/stable-diffusion-inpainting"
 
 
 class Inpainter:
@@ -13,11 +13,12 @@ class Inpainter:
             else "mps" if torch.backends.mps.is_available()
             else "cpu"
         )
-        dtype = torch.float16 if self.device in ("cuda", "mps") else torch.float32
+        dtype = torch.float16 if self.device == "cuda" else torch.float32
 
         self.pipe = StableDiffusionInpaintPipeline.from_pretrained(
             MODEL_ID,
             torch_dtype=dtype,
+            safety_checker=None,
         ).to(self.device)
 
         self.pipe.enable_attention_slicing()
